@@ -1,5 +1,10 @@
 package com.example.gradebook.entity;
 
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Сущность "Студент" — соответствует таблице "students" в базе данных.
  *
@@ -25,8 +30,38 @@ package com.example.gradebook.entity;
  *
  * Пустой конструктор обязателен — JPA создаёт объекты через рефлексию.
  */
+
+@Entity
+@Table(name = "students")
 public class Student {
     // TODO: @Entity, @Table(name = "students")
     // Поля: id (Long, @Id, @GeneratedValue), name (String, @Column(nullable = false)), scores (List<Score>, @OneToMany)
     // Пустой конструктор, конструктор с name, метод addScore(Score), геттеры и сеттеры
+
+    @Id
+    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(nullable = false)
+
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+
+    List<Score> scores = new ArrayList<>();
+
+    public void addScore(Score score) {
+        scores.add(score);
+        score.setStudent(this);
+    };
+
+
+
+    public Student() {
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    private String name;
 }

@@ -22,6 +22,8 @@ package com.example.gradebook.entity;
  *   @JoinColumn(name = "student_id") указывает имя столбца внешнего ключа в таблице scores.
  */
 public class Score {
+    public void setStudent(Student student) {
+    }
     // TODO: @Entity, @Table(name = "scores")
     // Поля: id, subject, value, student
     // Пустой конструктор, конструктор с subject и value, геттеры и сеттеры
