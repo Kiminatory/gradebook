@@ -51,7 +51,6 @@ public class Student {
 
     public void addScore(Score score) {
         scores.add(score);
-        score.setStudent(this);
     };
 
 
@@ -64,4 +63,28 @@ public class Student {
     }
 
     private String name;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<Score> getScores() {
+        return scores;
+    }
+
+    public void setScores(List<Score> scores) {
+        this.scores = scores;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
