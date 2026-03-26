@@ -18,4 +18,21 @@ package com.example.gradebook.adapter.dto;
 public class StudentCreateDto {
     // TODO: поле name (String)
     // Пустой конструктор, конструктор с name, геттер и сеттер
+
+    String name;
+
+    public StudentCreateDto() {
+    }
+
+    public StudentCreateDto(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

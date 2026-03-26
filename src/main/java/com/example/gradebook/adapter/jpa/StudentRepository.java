@@ -1,5 +1,9 @@
 package com.example.gradebook.adapter.jpa;
 
+import com.example.gradebook.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  * Репозиторий для доступа к таблице students в базе данных.
  *
@@ -15,7 +19,8 @@ package com.example.gradebook.adapter.jpa;
  * @Repository — аннотация, которая помечает интерфейс как репозиторий. Spring находит
  * его при сканировании пакетов и создаёт реализацию автоматически.
  */
-public interface StudentRepository {
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
     // TODO: наследовать JpaRepository<Student, Long>
     // Аннотация @Repository
 }

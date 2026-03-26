@@ -21,4 +21,50 @@ import java.util.List;
 public class StudentResponseDto {
     // TODO: поля: id (Long), name (String), averageScore (double), grade (String), scores (List<ScoreResponseDto>)
     // Геттеры и сеттеры для всех полей
+
+    long id;
+    String name;
+    double averageScore;
+    String grade;
+    List<ScoreResponseDto> scores;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getAverageScore() {
+        return averageScore;
+    }
+
+    public void setAverageScore(double averageScore) {
+        this.averageScore = averageScore;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public List<ScoreResponseDto> getScores() {
+        return scores;
+    }
+
+    public void setScores(List<ScoreResponseDto> scores) {
+        this.scores = scores;
+    }
 }

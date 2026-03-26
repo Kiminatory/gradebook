@@ -1,5 +1,8 @@
 package com.example.gradebook.adapter.dto;
 
+import com.example.gradebook.entity.Subject;
+import org.springframework.beans.factory.annotation.Value;
+
 /**
  * DTO для создания оценки — то, что клиент отправляет в теле POST-запроса.
  *
@@ -14,4 +17,38 @@ package com.example.gradebook.adapter.dto;
 public class ScoreCreateDto {
     // TODO: поля: subject (String), value (int)
     // Пустой конструктор, конструктор с subject и value, геттеры и сеттеры
+    String name;
+    String subject;
+    int value;
+
+    public ScoreCreateDto() {
+    }
+    public ScoreCreateDto(String subject, int value) {
+        this.subject = subject;
+        this.value = value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

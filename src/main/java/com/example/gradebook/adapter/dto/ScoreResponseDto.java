@@ -13,4 +13,41 @@ package com.example.gradebook.adapter.dto;
 public class ScoreResponseDto {
     // TODO: поля: id (Long), subject (String), displayName (String), value (int)
     // Геттеры и сеттеры для всех полей
+
+    long id;
+    String subject;
+    String displayName;
+    int value;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }
