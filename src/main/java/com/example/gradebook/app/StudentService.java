@@ -1,5 +1,12 @@
 package com.example.gradebook.app;
 
+import com.example.gradebook.adapter.dto.ScoreCreateDto;
+import com.example.gradebook.adapter.dto.ScoreResponseDto;
+import com.example.gradebook.adapter.dto.StudentCreateDto;
+import com.example.gradebook.adapter.dto.StudentResponseDto;
+
+import java.util.List;
+
 /**
  * Интерфейс сервиса для работы со студентами.
  *
@@ -23,4 +30,12 @@ public interface StudentService {
     // void deleteStudent(Long id)
     // ScoreResponseDto addScore(Long studentId, ScoreCreateDto dto)
     // List<ScoreResponseDto> getScores(Long studentId)
+
+    public StudentResponseDto createStudent(StudentCreateDto studentCreateDto);
+    public StudentResponseDto getStudentById(Long id);
+    public List<StudentResponseDto> getAllStudents();
+    public StudentResponseDto updateStudent(Long id, StudentCreateDto dto);
+    public void deleteStudent(Long id);
+    public ScoreResponseDto addScore(Long studentId, ScoreCreateDto dto);
+    public List<ScoreResponseDto> getScores(Long studentId);
 }

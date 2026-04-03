@@ -1,5 +1,18 @@
 package com.example.gradebook.app;
 
+import com.example.gradebook.adapter.dto.ScoreCreateDto;
+import com.example.gradebook.adapter.dto.ScoreResponseDto;
+import com.example.gradebook.adapter.dto.StudentCreateDto;
+import com.example.gradebook.adapter.dto.StudentResponseDto;
+import com.example.gradebook.adapter.jpa.StudentRepository;
+import com.example.gradebook.entity.Score;
+import com.example.gradebook.entity.Student;
+import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+
 /**
  * Реализация сервиса — здесь живёт вся бизнес-логика приложения.
  *
@@ -25,10 +38,61 @@ package com.example.gradebook.app;
  * Приватные методы mapToResponseDto() и mapToScoreResponseDto() преобразуют Entity в DTO.
  * Они используются во всех публичных методах, чтобы не дублировать код маппинга.
  */
-public class StudentServiceImpl {
+@Service
+@Transactional
+public class StudentServiceImpl implements StudentService {
     // TODO: @Service, implements StudentService
     // Поле: StudentRepository (final)
     // Конструктор с StudentRepository
     // Реализация всех 7 методов из интерфейса
     // Приватные методы: mapToResponseDto(Student), mapToScoreResponseDto(Score)
+
+    final StudentRepository studentRepository;
+
+    public StudentServiceImpl(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+
+    @Override
+    public StudentResponseDto createStudent(StudentCreateDto studentCreateDto) {
+        return null;
+    }
+
+    @Override
+    public StudentResponseDto getStudentById(Long id) {
+        return null;
+    }
+
+    @Override
+    public List<StudentResponseDto> getAllStudents() {
+        return List.of();
+    }
+
+    @Override
+    public StudentResponseDto updateStudent(Long id, StudentCreateDto dto) {
+        return null;
+    }
+
+    @Override
+    public void deleteStudent(Long id) {
+
+    }
+
+    @Override
+    public ScoreResponseDto addScore(Long studentId, ScoreCreateDto dto) {
+        return null;
+    }
+
+    @Override
+    public List<ScoreResponseDto> getScores(Long studentId) {
+        return List.of();
+    }
+
+    private void mapToResponseDto(Student student) {
+
+    }
+
+    private void mapToScoreResponseDto(Score score) {
+    }
 }
